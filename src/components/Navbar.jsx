@@ -30,10 +30,7 @@ class Navbar extends Component {
             <div className="navInfo w-full md:flex md:items-center md:justify-between hidden">
                 <a className="hidden md:inline-block text-2xl font-bold lg:text-3xl" href="index.html">Movies</a>
                 <div className="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0 items-center space-y-8 md:space-y-0">
-                    <a href="favorites.html" className="px-2 py-1 text-sm font-medium transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Favorites</a>
-                    <a href="popular.html" className="px-2 py-1 text-sm font-medium transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Popular</a>
-                    <a href="top.html" className="px-2 py-1 text-sm font-medium transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Top</a>
-                    <a href="horror.html" className="px-2 py-1 text-sm font-medium transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">Horror</a>
+                    
                 </div>
                 
                 <div className="relative">

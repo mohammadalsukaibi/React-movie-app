@@ -13,7 +13,7 @@ class Movie extends Component {
     return (
       
         <div className="">
-            <div className="xl:w-1/4 md:w-1/2 p-4 mx-auto">
+            <div className="xl:w-1/4 p-4">
                 <div className="rounded-xl w-32 md:w-64 mx-auto">
                     <a>
                         <img className="h-full w-32 md:w-64 mx-auto rounded object-cover object-center mb-6" src={"https://image.tmdb.org/t/p/w500" + this.props.data.poster_path} alt="content"/>
