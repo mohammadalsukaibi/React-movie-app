@@ -1,12 +1,11 @@
 import React, {Component} from "react";
-import { Routes, Route, Link} from 'react-router-dom'
-import "./App.css"
 import axios from "axios";
-// pages
-import Home from "./pages/Home";
-import About from "./pages/About";
+// components
+import Navbar from "../components/Navbar";
+import MoviesList from "../components/MoviesList";
 
-class App extends Component {
+
+class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -40,14 +39,13 @@ class App extends Component {
     return (
 
       <div>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+          <Navbar />
+          <MoviesList text="POPULAR MOVIES" Movies={this.state.PopularMovies} setloaded={this.setloaded} />
+          <MoviesList text="HORROR MOVIES" Movies={this.state.HorrorMovies} setloaded={this.setloaded}  />
         
       </div>
     )
   }
 }
 
-export default App;
+export default Home;

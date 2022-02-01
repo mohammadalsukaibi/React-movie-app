@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import { Link} from 'react-router-dom'
+
 
 class Navbar extends Component {
   constructor(props){
@@ -30,7 +32,7 @@ class Navbar extends Component {
             <div className="navInfo w-full md:flex md:items-center md:justify-between hidden">
                 <a className="hidden md:inline-block text-2xl font-bold lg:text-3xl" href="index.html">Movies</a>
                 <div className="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0 items-center space-y-8 md:space-y-0">
-                    
+                    <Link to="/about">About</Link>
                 </div>
                 
                 <div className="relative">
