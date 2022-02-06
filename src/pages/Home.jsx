@@ -5,7 +5,8 @@ import "../App.css";
 import Navbar from "../components/Navbar";
 import MoviesList from "../components/MoviesList";
 
-function Homee() {
+
+function Home() {
   const [popularMovies, setPopularMovies] = useState("");
   const [horrorMovies, setHorrorMovies] = useState("");
 
@@ -18,7 +19,7 @@ function Homee() {
       )
       .then((res) => {
         const movies = res.data.results;
-        setPopularMovies(movies);
+        setPopularMovies(movies.slice(0,5));
       });
     // get horror movies
     axios
@@ -27,7 +28,7 @@ function Homee() {
       )
       .then((res) => {
         const movies = res.data.results;
-        setHorrorMovies(movies);
+        setHorrorMovies(movies.slice(0,5));
       });
   }, []);
 
@@ -46,4 +47,4 @@ function Homee() {
   );
 }
 
-export default Homee;
+export default Home;
