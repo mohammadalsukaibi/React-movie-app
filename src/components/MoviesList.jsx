@@ -3,7 +3,7 @@ import Movie from "./Movie";
 
 function MoviesList({text, Movies}) {
   return (
-    <div className="container mx-auto mt-14 bg-gray-900 p-8">
+    <div className="mt-20 px-5 sm:mx-20">
       <div className="flex justify-between">
         <div>
           <h1 className="text-2xl md:text-4xl text-white font-bold">

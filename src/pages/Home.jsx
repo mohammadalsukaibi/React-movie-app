@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 // components
-import Navbar from "../components/Navbar";
 import MoviesList from "../components/MoviesList";
-import Header from "../components/Header";
 
 
 function Home() {
@@ -16,27 +14,25 @@ function Home() {
     // get popular movies
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=9ec9eafb71ae45ba76400994a6778f89&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
       )
       .then((res) => {
         const movies = res.data.results;
-        setPopularMovies(movies.slice(0,5));
+        setPopularMovies(movies.slice(0,6));
       });
     // get horror movies
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=9ec9eafb71ae45ba76400994a6778f89&with_genres=27`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=27`
       )
       .then((res) => {
         const movies = res.data.results;
-        setHorrorMovies(movies.slice(0,5));
+        setHorrorMovies(movies.slice(0,6));
       });
   }, []);
 
   return (
     <div>
-      <Header />
-      <Navbar />
       <MoviesList
         text="POPULAR MOVIES"
         Movies={popularMovies}
