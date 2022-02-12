@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 // components
-import MoviesList from "../components/MoviesList";
+import ScrollList from "../components/ScrollList";
+import SearchResults from "../components/SearchResults";
 
-
-function Home() {
+function Home({ searchValue, searchMovies }) {
   const [popularMovies, setPopularMovies] = useState("");
   const [horrorMovies, setHorrorMovies] = useState("");
 
   useEffect(() => {
-    console.log("use effect");
     // get popular movies
     axios
       .get(
@@ -18,7 +17,7 @@ function Home() {
       )
       .then((res) => {
         const movies = res.data.results;
-        setPopularMovies(movies.slice(0,6));
+        setPopularMovies(movies);
       });
     // get horror movies
     axios
@@ -27,20 +26,17 @@ function Home() {
       )
       .then((res) => {
         const movies = res.data.results;
-        setHorrorMovies(movies.slice(0,6));
+        setHorrorMovies(movies);
       });
   }, []);
 
   return (
     <div>
-      <MoviesList
-        text="POPULAR MOVIES"
-        Movies={popularMovies}
-      />
-      <MoviesList
-        text="HORROR MOVIES"
-        Movies={horrorMovies}
-      />
+      {searchMovies.length > 0 && (
+        <SearchResults text="SEARCH RESULTS" Movies={searchMovies} />
+      )}
+      <ScrollList text="POPULAR MOVIES" Movies={popularMovies} />
+      <ScrollList text="HORROR MOVIES" Movies={horrorMovies} />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import Movie from "./Movie";
 
 
-function MoviesList({text, Movies}) {
+function ScrollList({text, Movies}) {
   return (
-    <div className="container mx-auto mt-20 ">
-      <div className="flex">
+    <div className="mt-20 px-5 relative">
+      <div className="flex justify-between">
         <div>
           <h1 className="text-2xl md:text-4xl text-white font-bold">
             {text}
@@ -14,8 +14,8 @@ function MoviesList({text, Movies}) {
       </div>
 
       <section className="body-font">
-        <div className="py-4">
-          <div className="flex flex-wrap ">
+        <div className="py-4 md:pl-10">
+          <div className="flex overflow-x-scroll scrollbar-hide overflow-y-hidden">
             {Movies.length > 0 &&
               Movies.map((movie) => (
                 <Movie key={movie.id} data={movie} />
@@ -23,8 +23,9 @@ function MoviesList({text, Movies}) {
           </div>
         </div>
       </section>
+      <div className="absolute top-16 right-0 bg-gradient-to-l from-[#06202A] h-full w-24" />
     </div>
   );
 }
 
-export default MoviesList;
+export default ScrollList;

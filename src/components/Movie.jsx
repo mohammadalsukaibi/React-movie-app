@@ -1,7 +1,7 @@
 
 function Movie({data}) {
   return (
-    <div className="">
+    <div className="mx-auto">
       <div className="xl:w-1/4 p-4">
         <div className="rounded-xl w-32 md:w-64 mx-auto">
           <a>
