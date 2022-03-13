@@ -10,6 +10,14 @@ import About from "./pages/About";
 import Trending from "./pages/Trending"
 import TopRated from "./pages/TopRated";
 import Action from "./pages/Action";
+import Comedy from "./pages/Comedy";
+import Horror from "./pages/Horror";
+import Romance from "./pages/Romance";
+import Mystery from "./pages/Mystery";
+import Sifi from "./pages/Sifi";
+import Western from "./pages/Western";
+import Animation from "./pages/Animation";
+import TV from "./pages/TV";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -36,6 +44,14 @@ function App() {
         <Route path="/Trending" element={<Trending />} />
         <Route path="/TopRated" element={<TopRated />} />
         <Route path="/Action" element={<Action />} />
+        <Route path="/Comedy" element={<Comedy />} />
+        <Route path="/Horror" element={<Horror />} />
+        <Route path="/Romance" element={<Romance />} />
+        <Route path="/Mystery" element={<Mystery />} />
+        <Route path="/Sci-Fi" element={<Sifi />} />
+        <Route path="/western" element={<Western />} />
+        <Route path="/animation" element={<Animation />} />
+        <Route path="/TV%20Movie" element={<TV />} />
       </Routes>
     </div>
   );
